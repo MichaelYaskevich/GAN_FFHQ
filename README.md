@@ -1,4 +1,4 @@
-# GAN_FFHQ
+# GAN FFHQ
 
 Generative adversarial network (GAN) trained on Flickr-Faces-HQ (FFHQ) for face generation. \
 After training we count leave-one-out-1-NN classifier accuracy of the GAN. \
