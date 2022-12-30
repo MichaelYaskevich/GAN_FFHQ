@@ -1,4 +1,5 @@
 class GanOptimizer:
+    """Optimizer for discriminator and generator"""
     def __init__(self, discriminator_opt, generator_opt):
         self._discriminator_opt = discriminator_opt
         self._generator_opt = generator_opt
