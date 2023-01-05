@@ -1,1 +1,1 @@
-from exceptions import WrongImageSizeException
+from .exceptions import WrongImageSizeException

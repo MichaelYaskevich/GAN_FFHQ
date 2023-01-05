@@ -17,7 +17,7 @@ class GanModel:
 
         convs_to_add_count = image_size // 64 - 1
         self._discriminator = create_discriminator(convs_to_add_count)
-        self._generator = create_generator(convs_to_add_count)
+        self._generator = create_generator(convs_to_add_count, latent_size)
 
     def get_latent_size(self):
         return self._latent_size

@@ -1,3 +1,3 @@
-from feature_extraction import get_feature_extractor
-from loo_1nn_cls_accuracy import get_leave_one_out_1nn_cls_accuracy
-from tsne import tsne_for_batch
+from .feature_extraction import get_feature_extractor
+from .loo_1nn_cls_accuracy import get_leave_one_out_1nn_cls_accuracy
+from .tsne import tsne_for_batch

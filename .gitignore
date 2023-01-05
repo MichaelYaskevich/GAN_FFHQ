@@ -7,6 +7,7 @@ __pycache__/
 *.so
 
 /.idea/
+/scr/resources/faces_dataset_small/
 
 # Distribution / packaging
 .Python

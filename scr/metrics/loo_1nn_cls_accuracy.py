@@ -4,13 +4,12 @@ from sklearn.neighbors import KNeighborsClassifier
 from sklearn.model_selection import LeaveOneOut
 
 from scr.data_preparation import DeviceDataLoader
-from scr.metrics.feature_extraction import get_feature_extractor
 
 
 def get_leave_one_out_1nn_cls_accuracy(
-        real_images_dl: DeviceDataLoader, fake_images_dl: DeviceDataLoader) -> float:
+        real_images_dl: DeviceDataLoader, fake_images_dl: DeviceDataLoader,
+        feature_extractor) -> float:
     """Counts leave one out 1nn (k nearest neighbors with k == 1) classifier accuracy"""
-    feature_extractor = get_feature_extractor()
     batch_size = real_images_dl.get_batch_size()
 
     fake_labels = torch.zeros(batch_size, 1)
@@ -34,7 +33,7 @@ def get_leave_one_out_1nn_cls_accuracy(
 def get_batch_of_features(batch_iter, feature_extractor) -> torch.Tensor:
     batch, _ = next(batch_iter)
     batch = feature_extractor(batch)
-    return batch.view(-1, 256 * 16 * 16).cpu().detach()
+    return batch.view(batch.size(0), -1).cpu().detach()
 
 
 def get_batch_loss(data, labels) -> float:
